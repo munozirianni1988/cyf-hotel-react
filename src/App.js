@@ -1,5 +1,7 @@
 import React from "react";
 
+import TouristInfoCards from "./TouristInfoCards";
+
 import Bookings from "./Bookings";
 import "./App.css";
 
@@ -8,6 +10,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">CYF Hotel</header>
       <Bookings />
+      <TouristInfoCards />
     </div>
   );
 };
