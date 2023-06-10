@@ -11,8 +11,8 @@ const App = () => {
     <div className="App">
       <header className="App-header">CYF Hotel</header>
       <Bookings />
-      <Footer className="footer"/>
       <TouristInfoCards />
+      <Footer className="footer"/>
     </div>
   );
 };
