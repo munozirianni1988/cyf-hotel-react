@@ -1,8 +1,8 @@
 import React from "react";
 
-function SearchResults() {
+function SearchResults({results}) {
   return (
-    <table class="table">
+   <><table class="table table-hover table-white">
       <thead>
         <tr>
           <th scope="col">Title</th>
@@ -15,7 +15,7 @@ function SearchResults() {
         </tr>
       </thead>
       <tbody>
-        <tr id="1">
+        {/* <tr id="1">
           <th scope="row">Mr</th>
           <td>John</td>
           <td>Doe</td>
@@ -59,9 +59,19 @@ function SearchResults() {
           <td>3</td>
           <td>2017-08-30</td>
           <td>2017-10-02</td>
-        </tr>
+        </tr> */}
+        {results.map((element)=>{
+     return <><tr><td>{element.id}</td>
+     <td>{element.title}</td>
+     <td>{element.firstName}</td>
+     <td>{element.surname}</td>
+     <td>{element.email}</td>
+     <td>{element.roomId}</td>
+     <td>{element.checkInDate}</td>
+     <td>{element.checkOutDate}</td></tr></>
+})}
       </tbody>
-    </table>
+    </table></>
   );
 }
 
