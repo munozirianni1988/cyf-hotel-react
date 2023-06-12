@@ -1,23 +1,5 @@
 import React from "react";
 
-<<<<<<< Updated upstream
-function SearchResults() {
-  return (
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Email</th>
-          <th scope="col">Room ID</th>
-          <th scope="col">Check-in Date</th>
-          <th scope="col">Check-out Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr id="1">
-=======
 function SearchResults({ results }) {
   return (
     <>
@@ -36,7 +18,6 @@ function SearchResults({ results }) {
         </thead>
         <tbody>
           {/* <tr id="1">
->>>>>>> Stashed changes
           <th scope="row">Mr</th>
           <td>John</td>
           <td>Doe</td>
