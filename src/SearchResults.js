@@ -35,6 +35,7 @@ function SearchResults({ results }) {
           })}
         </tbody>
       </table>
+    </>
   );
 }
 
