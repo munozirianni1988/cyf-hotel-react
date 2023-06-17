@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 function SearchResults({ results }) {
   return (
@@ -14,10 +15,15 @@ function SearchResults({ results }) {
             <th scope="col">Room ID</th>
             <th scope="col">Check-in Date</th>
             <th scope="col">Check-out Date</th>
+            <th scope="col">Number of Nights </th>
           </tr>
         </thead>
         <tbody>
           {results.map((element) => {
+            const startDate = moment(element.checkInDate);
+            const endDate = moment(element.checkOutDate);
+            const stay = endDate.diff(startDate, 'days');
+  
             return (
               <>
                 <tr>
@@ -29,6 +35,7 @@ function SearchResults({ results }) {
                   <td>{element.roomId}</td>
                   <td>{element.checkInDate}</td>
                   <td>{element.checkOutDate}</td>
+                  <td>{stay}</td>
                 </tr>
               </>
             );
