@@ -11,10 +11,13 @@ const Restaurant = () => {
       <h3>Restaurant Orders</h3>
       <ul>
         <li>
+
           Pizzas: {orders}{" "}
           <button onClick={orderOne} className="btn btn-primary">
             Add
           </button>
+
+ 
         </li>
       </ul>
     </div>
