@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import moment from "moment";
 
 function SearchResults({ results }) {
@@ -23,10 +23,23 @@ function SearchResults({ results }) {
             const startDate = moment(element.checkInDate);
             const endDate = moment(element.checkOutDate);
             const stay = endDate.diff(startDate, 'days');
+
+            const [isRowSelected,SetIsRowSelected]= useState();
+            const handleClick= ()=>{
+              SetIsRowSelected(!isRowSelected);
+            }
+
+            let rowStyle= {}
+
+            if (isRowSelected){
+              rowStyle={ backgroundColor: "orange" };
+            }
   
             return (
+              
               <>
-                <tr>
+                <tr
+                  onClick={handleClick} style={rowStyle} key={element.id}>
                   <td>{element.id}</td>
                   <td>{element.title}</td>
                   <td>{element.firstName}</td>
