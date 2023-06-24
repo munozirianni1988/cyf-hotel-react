@@ -8,15 +8,23 @@ const Bookings = () => {
 
   useEffect(() => {
     console.log("some text only when the page first renders on the screen");
-
     fetch("https://cyf-react.glitch.me")
       .then((response) => response.json())
-      .then((data) => setBookings(data))
+      .then((data) => {
+        setBookings(data);
+      })
       .catch((error) => console.error(error));
   }, []);
 
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    let result = bookings.filter((booking) => {
+      return (
+        booking.firstName.toLowerCase().includes(searchVal) ||
+        booking.surname.toLowerCase().includes(searchVal)
+      );
+    });
+    setBookings(result);
+    console.log(result);
   };
 
   return (
@@ -28,5 +36,4 @@ const Bookings = () => {
     </div>
   );
 };
-
 export default Bookings;

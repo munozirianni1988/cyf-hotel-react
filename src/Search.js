@@ -5,7 +5,7 @@ const Search = (props) => {
 
   function handleSearchInput(event) {
     setSearchInput(event.target.value);
-    console.log(searchInput);
+    // console.log(searchInput);
   }
 
   return (
