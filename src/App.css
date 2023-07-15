@@ -73,3 +73,7 @@ tr {
   align-items: center;
   justify-content: space-between;
 }
+.loading{
+  font-size: larger;
+  color: red;
+}
