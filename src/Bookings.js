@@ -5,6 +5,7 @@ import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
+  const [filterBookings, setFilterBookings] = useState([]);
 
   useEffect(() => {
     console.log("some text only when the page first renders on the screen");
@@ -12,10 +13,13 @@ const Bookings = () => {
       .then((response) => response.json())
       .then((data) => {
         setBookings(data);
+        setFilterBookings(data);
       })
       .catch((error) => console.error(error));
   }, []);
 
+  // think about putting into separate useEffect
+  // consider using useContext (requires more work)
   const search = (searchVal) => {
     let result = bookings.filter((booking) => {
       return (
@@ -23,7 +27,7 @@ const Bookings = () => {
         booking.surname.toLowerCase().includes(searchVal)
       );
     });
-    setBookings(result);
+    setFilterBookings(result);
     console.log(result);
   };
 
@@ -31,7 +35,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        <SearchResults results={bookings} />
+        <SearchResults results={filterBookings} />
       </div>
     </div>
   );
